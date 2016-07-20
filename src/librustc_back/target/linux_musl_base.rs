@@ -57,6 +57,8 @@ pub fn opts() -> TargetOptions {
     // Each target directory for musl has these object files included in it so
     // they'll be included from there.
     base.pre_link_objects_exe.push("crt1.o".to_string());
+    base.pre_link_objects_exe.push("crtbegin.o".to_string());
+    base.pre_link_objects_exe.push("crtend.o".to_string());
     base.pre_link_objects_exe.push("crti.o".to_string());
     base.post_link_objects.push("crtn.o".to_string());
 

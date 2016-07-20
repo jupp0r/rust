@@ -102,7 +102,7 @@ pub fn std_link(build: &Build,
 ///
 /// Only required for musl targets that statically link to libc
 fn copy_third_party_objects(build: &Build, target: &str, into: &Path) {
-    for &obj in &["crt1.o", "crti.o", "crtn.o"] {
+    for &obj in &["crtbegin.o", "crtend.o", "crt1.o", "crti.o", "crtn.o"] {
         copy(&compiler_file(build.cc(target), obj), &into.join(obj));
     }
 }
